@@ -10,7 +10,7 @@ body {
     align-items: center;
     padding: 15px 30px;
     position: fixed;
-    width: 95%;
+    width: 97%;
     top: 0;
     z-index: 1000;
     background: transparent; /* Default transparent */
@@ -54,7 +54,41 @@ body {
     border-radius: 5px;
     transition: all 0.4s ease;
 }
+/* Hamburger Menu Styles */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px; /* Adjust width */
+    height: 20px; /* Adjust height */
+    cursor: pointer;
+    gap: 5px; /* Space between the bars */
+    z-index: 1001; /* Ensure it's above other elements */
+    top: 20 px;
+    right: 100 px;
+}
 
+.hamburger span {
+    width: 100%;
+    height: 3px; /* Thickness of the hamburger bars */
+    background-color: white; /* Color of the bars */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for toggle effect */
+}
+
+/* Animation for hamburger menu toggle */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px); /* First bar rotates */
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0; /* Hide the middle bar when the menu is open */
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px); /* Third bar rotates */
+}
 .header-buttons .btn {
     font-size: 15px;
     margin: 0 10px;
@@ -129,9 +163,7 @@ body {
     color: black;
 }
 
-/* Modal Styles */
 /* Modal Styles with Fade-In Effect */
-/* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -151,6 +183,7 @@ body {
     opacity: 1; /* Fully visible */
 }
 
+/* Modal Content Styling */
 .modal-content {
     background-color: #fff;
     margin: 10% auto; /* Center modal */
@@ -160,16 +193,6 @@ body {
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
-}
-
-/* Notice Image Styles */
-.notice-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Modal Heading Styles */
@@ -194,6 +217,16 @@ body {
     text-decoration: none;
 }
 
+/* Notice Image Styles */
+.notice-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Notice Card Styles */
 .notice-card {
     border: 1px solid #ddd;
@@ -209,16 +242,6 @@ body {
 .notice-image-container {
     margin-top: 15px; /* Space between Read More link and image */
 }
-
-.notice-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-}
-
 
 /* Individual notice card animation delays */
 .notice-card:nth-child(1) { animation-delay: 0.1s; }
@@ -733,280 +756,10 @@ body {
     color: #ffa500;
 }
 
-/* Responsive Design */
-@media (max-width: 1100px) {
-    .modal-content {
-        width: 90%; /* Adjust width for smaller screens */
-        padding: 15px;
-    }
-
-    .modal-content h2 {
-        font-size: 20px;
-    }
-
-    .activities-header, .mission-content-inner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .activities-header h2,.activities-header p,.mission-content-inner h2,
-    .mission-content-inner p {
-        text-align: center;
-    }
-    .student-life-header h2 {
-        font-size: 28px;
-    }
-
-    .student-life-header p {
-        font-size: 16px;
-    }
-
-    .teachers-header h2 {
-        font-size: 28px;
-    }
-
-    .teacher-card h3 {
-        font-size: 20px;
-    }
-
-    .teacher-card p {
-        font-size: 14px;
-    }
-
-    .facilities-container {
-        flex-direction: column;
-    }
-
-    .facilities-content h2 {
-        font-size: 28px;
-    }
-
-    .facilities-content p,
-    .facilities-content ul li {
-        font-size: 16px;
-    }
-
-    .activities-cards {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-.hero-content {
-        left: 0; /* Reset or adjust for smaller screens */
-        margin-left: 0;
-        padding-left: 10px;
-    }
-    .hero-content h1 {
-        font-size: 36px;
-    }
-
-    .hero-content p {
-        font-size: 20px;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background-color: #444;
-        padding: 20px;
-        border-radius: 5px;
-        z-index: 1000;
-      }
-    
-      .nav-links.active {
-        display: flex;
-      }
-    
-      .header-buttons {
-        display: none; /* Hide buttons on smaller screens */
-      }
-    
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-      }
-    
-      .hamburger span {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-      }
-}
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 0; /* Initially transparent */
-    transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
-}
-
-.modal.show {
-    display: block; /* Show the modal */
-    opacity: 1; /* Fully visible */
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto; /* Center modal */
-    padding: 20px;
-    border-radius: 8px;
-    width: 70%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
-}
-
-/* Notice Image Styles */
-.notice-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Modal Heading Styles */
-.modal-content h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-}
-
-/* Notice Card Styles */
-.notice-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 15px;
-    background-color: #f9f9f9;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slide-in 0.5s forwards;
-}
-
-/* Individual notice card animation delays */
-.notice-card:nth-child(1) { animation-delay: 0.1s; }
-.notice-card:nth-child(2) { animation-delay: 0.2s; }
-.notice-card:nth-child(3) { animation-delay: 0.3s; }
-
-@keyframes slide-in {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Notice Card Content */
-.notice-card h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: #007BFF;
-}
-
-.notice-card p {
-    margin: 0 0 10px;
-    color: #555;
-}
-
-.notice-card small {
-    display: block;
-    color: #888;
-}
-
-.notice-card a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-.notice-card a:hover {
-    text-decoration: underline;
-}
-
-/* Mobile and Tablet Responsive Styles */
-@media (max-width: 768px) {
-    /* Modal */
-    .modal-content {
-        width: 90%; /* Reduce modal width on small screens */
-        padding: 15px;
-    }
-
-    .modal-content h2 {
-        font-size: 20px;
-    }
-
-    /* Notice Cards */
-    .notice-card {
-        padding: 12px;
-    }
-
-    .notice-card h3 {
-        font-size: 16px;
-    }
-
-    .notice-card p {
-        font-size: 14px;
-    }
-
-    .notice-card small {
-        font-size: 12px;
-    }
-
-    .notice-card a {
-        font-size: 14px;
-    }
-
-    /* Notice Image */
-    .notice-image {
-        max-width: 100%;
-    }
-
-    /* Close button */
-    .close {
-        font-size: 24px;
-    }
-}
-
-/* Mobile-First Design for very small screens (like phones) */
+/* Mobile screens and smaller (480px and below) */
 @media (max-width: 480px) {
-    /* Modal */
     .modal-content {
-        width: 95%; /* Full width on very small screens */
+        width: 95%; /* Full width */
         padding: 12px;
     }
 
@@ -1014,7 +767,6 @@ body {
         font-size: 18px;
     }
 
-    /* Notice Cards */
     .notice-card {
         padding: 10px;
     }
@@ -1035,14 +787,199 @@ body {
         font-size: 12px;
     }
 
-    /* Notice Image */
     .notice-image {
         max-width: 100%;
     }
 
-    /* Close button */
     .close {
         font-size: 20px;
     }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background-color: #333;
+    }
 }
 
+/* Mobile and Tablet Styles (max-width: 768px) */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    /* Notice Cards */
+    .notice-card {
+        padding: 12px;
+    }
+
+    .notice-card h3 {
+        font-size: 16px;
+    }
+
+    .notice-card p {
+        font-size: 14px;
+    }
+
+    .notice-card small {
+        font-size: 12px;
+    }
+
+    .notice-card a {
+        font-size: 14px;
+    }
+
+    .notice-image {
+        max-width: 100%;
+    }
+
+    .close {
+        font-size: 24px;
+    }
+
+    /* Nav links for mobile/tablet */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background-color: #333;
+    }
+}
+
+/* Hamburger Menu - Small to Medium Screens (max-width: 1100px) */
+@media (max-width: 1150px) {
+    /* Hamburger visibility on smaller screens */
+    .hamburger {
+        display: flex; /* Display hamburger menu */
+        position: absolute;
+        top: 20px;
+        right: 70px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .header-buttons {
+        display: none; /* Hide buttons on smaller screens */
+    }
+
+    /* Hero Content Adjustments for Mobile */
+    .hero-content {
+        left: 0;
+        margin-left: 0;
+        padding-left: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    /* General Content for Mobile */
+    .activities-header, .mission-content-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .activities-header h2, .activities-header p, .mission-content-inner h2, .mission-content-inner p {
+        text-align: center;
+    }
+
+    .student-life-header h2, .teachers-header h2, .facilities-content h2 {
+        font-size: 28px;
+    }
+
+    .student-life-header p, .teachers-header p, .facilities-content p, .facilities-content ul li {
+        font-size: 16px;
+    }
+
+    .teacher-card h3 {
+        font-size: 20px;
+    }
+
+    .teacher-card p {
+        font-size: 14px;
+    }
+
+    .facilities-container {
+        flex-direction: column;
+    }
+
+    .activities-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1150px) {
+    .hamburger {
+        display: none; /* Hide the hamburger menu */
+    }
+}

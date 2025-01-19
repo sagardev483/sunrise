@@ -1,23 +1,23 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the default anchor behavior
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth' // Smooth scroll
         });
+        // Close the navigation menu after clicking a link (for mobile view)
+        if (window.innerWidth <= 768) {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('active'); // Hide the menu on small screens
+        }
     });
 });
-
-// Add more interactivity as needed
 
 // Get references to modal elements
 const modal = document.getElementById("notice-modal");
 const noticeBtn = document.getElementById("notice-btn");
 const closeBtn = document.querySelector(".close");
 const noticesContainer = document.getElementById("notices-container");
-const noticeImageContainer = document.getElementById("notice-image-container");
-
-// Notice halne thau
 
 // Notices data (with image URLs)
 const notices = [
@@ -25,95 +25,90 @@ const notices = [
         title: "Exam Schedule Released",
         date: "2025-01-20",
         description: "The mid-term exam schedule is now available on the portal.",
-        
         image: "notice/notice.jpg"  // Image URL for the notice
     },
     {
         title: "Holiday Announcement",
         date: "2025-01-18",
         description: "School will remain closed on January 26th for Republic Day.",
-        
         image: "pics/aa.jpg"  // Image URL for the notice
     }
 ];
 
-// ya samma matra ho
-
 // Function to load notices into the modal
 function loadNotices() {
     noticesContainer.innerHTML = ""; // Clear existing content
+
     notices.forEach(notice => {
-        const noticeHTML = `
-        <div class="notice-card">
-            <h3>${notice.title}</h3>
-            <p>${notice.description}</p>
-            <small><strong>Date:</strong> ${notice.date}</small>
-            <br>
-            <!-- Update the Read More link to use data-attributes -->
-            <a href="#" class="read-more" data-image="${notice.image}" data-description="${notice.description}">Read More</a>
-        </div>
-    `;
-        noticesContainer.innerHTML += noticeHTML;
+        const noticeCard = document.createElement('div');
+        noticeCard.classList.add('notice-card');
+        
+        const title = document.createElement('h3');
+        title.textContent = notice.title;
+        
+        const description = document.createElement('p');
+        description.textContent = notice.description;
+        
+        const date = document.createElement('small');
+        date.innerHTML = `<strong>Date:</strong> ${notice.date}`;
+
+        const readMoreLink = document.createElement('a');
+        readMoreLink.href = '#';
+        readMoreLink.classList.add('read-more');
+        readMoreLink.setAttribute('data-image', notice.image);
+        readMoreLink.setAttribute('data-description', notice.description);
+        readMoreLink.textContent = "Read More";
+
+        // Append all elements to the notice card
+        noticeCard.appendChild(title);
+        noticeCard.appendChild(description);
+        noticeCard.appendChild(date);
+        noticeCard.appendChild(readMoreLink);
+
+        // Append notice card to the container
+        noticesContainer.appendChild(noticeCard);
     });
 }
-// JavaScript to handle the Read More click event
-document.querySelectorAll('.read-more').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default anchor link behavior
+
+// Event delegation for handling Read More click event
+noticesContainer.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('read-more')) {
+        e.preventDefault(); // Prevent default anchor link behavior
         
-        // Get the data from the clicked Read More link
-        const imageSrc = this.getAttribute('data-image');
-        const description = this.getAttribute('data-description');
-        
-        // Log the imageSrc to check if it's correct
-        console.log(imageSrc); // Debugging: Check if the image URL is correct
+        const noticeCard = e.target.closest('.notice-card');
+        const imageSrc = e.target.getAttribute('data-image');
+        const description = e.target.getAttribute('data-description');
 
-        // Find the notice-card element and the image container inside it
-        const noticeCard = this.closest('.notice-card');
-        const imageContainer = noticeCard.querySelector('.notice-image-container');
+        const existingImage = noticeCard.querySelector('.notice-image');
+        if (!existingImage) {
+            const img = document.createElement('img');
+            img.classList.add('notice-image');
+            img.src = imageSrc;
+            img.alt = description;
 
-        // Create the image element dynamically
-        const img = document.createElement('img');
-        img.classList.add('notice-image');
-        img.src = imageSrc; // Set the image source
-        img.alt = description; // Set alt text for the image
-
-        // Append the image to the image container
-        imageContainer.appendChild(img);
-    });
+            const dateElement = noticeCard.querySelector('small');
+            noticeCard.insertBefore(img, dateElement.nextSibling);
+        }
+    }
 });
 
-// Show the modal with animation
+// Show the modal and load notices
 noticeBtn.addEventListener("click", () => {
-    loadNotices(); // Load notices dynamically
+    loadNotices();
     modal.classList.add("show"); // Add 'show' class for fade-in effect
 });
 
 // Close the modal
 closeBtn.addEventListener("click", () => {
     modal.classList.remove("show"); // Remove 'show' class for fade-out effect
-    noticeImageContainer.innerHTML = ""; // Clear the image when closing modal
 });
 
+// Close modal if user clicks outside
 window.addEventListener("click", (event) => {
     if (event.target === modal) {
-        modal.classList.remove("show"); // Hide modal on outside click
-        noticeImageContainer.innerHTML = ""; // Clear the image when clicking outside
+        modal.classList.remove("show");
     }
 });
-
-// Function to display the image when "Read More" is clicked
-noticesContainer.addEventListener("click", (event) => {
-    if (event.target.classList.contains("read-more")) {
-        const imageUrl = event.target.getAttribute("data-image");
-        displayImage(imageUrl);  // Call function to display image in modal
-    }
-});
-
-// Function to display image in the modal
-function displayImage(imageUrl) {
-    noticeImageContainer.innerHTML = `<img src="${imageUrl}" alt="Notice Image" class="notice-image">`;
-}
 
 // Header scroll effect
 const header = document.querySelector('.header');
@@ -125,9 +120,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Hamburger menu toggle
+// Hamburger menu toggle (one listener is sufficient)
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('active'); /* Show/Hide the nav menu */
 });

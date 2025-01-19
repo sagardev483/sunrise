@@ -38,15 +38,14 @@ body {
 }
 
 .nav-links li a {
-    
     text-decoration: none;
-    color: inherit; /* Adjust based on header's color */
+    color: inherit; /* Inherit color from the parent */
     font-size: 16px;
-    transition: color 0.4s ease;
+    transition: color 0.4s ease, padding 0.4s ease;
 }
 
 .nav-links li a:hover {
-    padding: 10px 20px; 
+    padding: 10px 20px;
     border: 1px solid white;
     background: transparent;
     color: white;
@@ -54,19 +53,18 @@ body {
     border-radius: 5px;
     transition: all 0.4s ease;
 }
+
 /* Hamburger Menu Styles */
 .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 30px; /* Adjust width */
-    height: 20px; /* Adjust height */
+    width: 30px; /* Hamburger width */
+    height: 20px; /* Hamburger height */
     cursor: pointer;
     gap: 5px; /* Space between the bars */
     z-index: 1001; /* Ensure it's above other elements */
-    top: 20 px;
-    right: 100 px;
 }
 
 .hamburger span {
@@ -74,7 +72,7 @@ body {
     height: 3px; /* Thickness of the hamburger bars */
     background-color: white; /* Color of the bars */
     border-radius: 5px; /* Rounded corners */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for toggle effect */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
 }
 
 /* Animation for hamburger menu toggle */
@@ -89,6 +87,7 @@ body {
 .hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px); /* Third bar rotates */
 }
+
 .header-buttons .btn {
     font-size: 15px;
     margin: 0 10px;
@@ -893,7 +892,7 @@ body {
     }
 }
 
-/* Hamburger Menu - Small to Medium Screens (max-width: 1100px) */
+/* Hamburger Menu - Small to Medium Screens (max-width: 1150px) */
 @media (max-width: 1150px) {
     /* Hamburger visibility on smaller screens */
     .hamburger {
@@ -978,8 +977,56 @@ body {
     }
 }
 
+/* Enhancing Hover Effects */
+@media screen and (max-width: 1150px) {
+    .nav-links  {
+        background-color: #141313;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .nav-links li a {
+        font-size: 18px; /* Larger font size for readability */
+        color: #fff; /* White text for links */
+        transition: padding-left 0.4s ease, color 0.4s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #ffd700; /* Golden color on hover */
+        padding-left: 10px; /* Smooth padding transition */
+    }
+}
+
+/* Hamburger Menu Visibility Above 1150px */
 @media (min-width: 1150px) {
     .hamburger {
         display: none; /* Hide the hamburger menu */
     }
 }
+
+/* Enhanced Nav Links Transition */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #141313;
+        padding: 15px;
+        border-radius: 8px;
+        
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        gap: 15px;
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+

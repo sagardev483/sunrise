@@ -4,6 +4,7 @@ body {
     color: white;
 }
 
+/* Header container */
 .header {
     display: flex;
     justify-content: space-between;
@@ -22,13 +23,36 @@ body {
     color: white; /* Text remains white */
 }
 
-.logo a {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: #f9f9f9;
-    transition: all 0.5s ease;
+/* Logo container */
+.logo {
+    display: flex;
+    align-items: center; /* Vertically center the logo image */
 }
+
+/* Styling for logo link */
+.logo a {
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Ensure the anchor wraps the image properly */
+    align-items: center;
+    transition: all 0.5s ease; /* Smooth hover transition */
+}
+
+/* Styling for logo image */
+.logo img {
+    
+    border-radius: 50%;
+    max-height: 60px; /* Set the maximum height for the logo */
+    width: auto; /* Maintain the aspect ratio of the logo */
+    display: block; /* Prevent inline spacing issues */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add smooth hover effects */
+}
+
+/* Hover effect for the logo image */
+.logo a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    filter: brightness(0.9); /* Slightly darken the logo on hover */
+}
+
 
 .nav-links {
     list-style: none;
@@ -157,10 +181,17 @@ body {
     transition: all 0.5s ease;
 }
 
+.hero-buttons .btn a{
+    text-decoration: none;
+    color: inherit;
+    
+}
+
 .hero-buttons .btn:hover {
     background: white;
     color: black;
 }
+
 
 /* Modal Styles with Fade-In Effect */
 .modal {
@@ -365,16 +396,18 @@ body {
       
 }
 .activities-header h2 {
+    max-width: 500px;
     text-align: left;
-    flex: 1;
+    flex: 2;
     font-size: 36px;
     font-weight: bold;
-    margin:auto;
+    margin:0 auto;
+    
     
 }
 
 .activities-header p {
-    text-align: left;
+    text-align: justify;
     flex: 2;
     font-size: 18px;
     line-height: 1.6;
@@ -898,7 +931,7 @@ body {
     .hamburger {
         display: flex; /* Display hamburger menu */
         position: absolute;
-        top: 20px;
+        top: 30px;
         right: 70px;
     }
 
@@ -938,12 +971,12 @@ body {
     }
 
     /* General Content for Mobile */
-    .activities-header, .mission-content-inner {
+    .activities-header, .card-content, .mission-content-inner {
         flex-direction: column;
         text-align: center;
     }
 
-    .activities-header h2, .activities-header p, .mission-content-inner h2, .mission-content-inner p {
+    .activities-header h2,.activities-header p, .mission-content-inner h2, .mission-content-inner p {
         text-align: center;
     }
 

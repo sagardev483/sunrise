@@ -1,0 +1,276 @@
+/* Mobile screens and smaller (480px and below) */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%; /* Full width */
+        padding: 12px;
+    }
+
+    .modal-content h2 {
+        font-size: 18px;
+    }
+
+    .notice-card {
+        padding: 10px;
+    }
+
+    .notice-card h3 {
+        font-size: 14px;
+    }
+
+    .notice-card p {
+        font-size: 12px;
+    }
+
+    .notice-card small {
+        font-size: 10px;
+    }
+
+    .notice-card a {
+        font-size: 12px;
+    }
+
+    .notice-image {
+        max-width: 100%;
+    }
+
+    .close {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background-color: #333;
+    }
+}
+
+/* Mobile and Tablet Styles (max-width: 768px) */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    /* Notice Cards */
+    .notice-card {
+        padding: 12px;
+    }
+
+    .notice-card h3 {
+        font-size: 16px;
+    }
+
+    .notice-card p {
+        font-size: 14px;
+    }
+
+    .notice-card small {
+        font-size: 12px;
+    }
+
+    .notice-card a {
+        font-size: 14px;
+    }
+
+    .notice-image {
+        max-width: 100%;
+    }
+
+    .close {
+        font-size: 24px;
+    }
+
+    /* Nav links for mobile/tablet */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background-color: #333;
+    }
+}
+
+/* Hamburger Menu - Small to Medium Screens (max-width: 1150px) */
+@media (max-width: 1150px) {
+    /* Hamburger visibility on smaller screens */
+    .hamburger {
+        display: flex; /* Display hamburger menu */
+        position: absolute;
+        top: 30px;
+        right: 70px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+        margin: auto;
+    }
+
+    .header-buttons {
+        display: none; /* Hide buttons on smaller screens */
+    }
+
+    /* Hero Content Adjustments for Mobile */
+    .hero-content {
+        left: 0;
+        margin-left: 0;
+        padding-left: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    /* General Content for Mobile */
+    .activities-header, .card-content, .mission-content-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .activities-header h2,.activities-header p, .mission-content-inner h2, .mission-content-inner p {
+        text-align: center;
+    }
+
+    .student-life-header h2, .teachers-header h2, .facilities-content h2 {
+        font-size: 28px;
+    }
+
+    .student-life-header p, .teachers-header p, .facilities-content p, .facilities-content ul li {
+        font-size: 16px;
+    }
+
+    .teacher-card h3 {
+        font-size: 20px;
+    }
+
+    .teacher-card p {
+        font-size: 14px;
+    }
+
+    .facilities-container {
+        flex-direction: column;
+    }
+
+    .activities-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+/* Enhancing Hover Effects */
+@media screen and (max-width: 1150px) {
+    .nav-links  {
+        background-color: #141313;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .nav-links li a {
+        font-size: 18px; /* Larger font size for readability */
+        color: #fff; /* White text for links */
+        transition: padding-left 0.4s ease, color 0.4s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #ffd700; /* Golden color on hover */
+        padding-left: 10px; /* Smooth padding transition */
+    }
+}
+
+/* Hamburger Menu Visibility Above 1150px */
+@media (min-width: 1150px) {
+    .hamburger {
+        display: none; /* Hide the hamburger menu */
+    }
+}
+
+/* Enhanced Nav Links Transition */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #141313;
+        padding: 15px;
+        border-radius: 8px;
+        
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        gap: 15px;
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+

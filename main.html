@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="pics/logo.jpg" type="image/png" style="border-radius: 50%;">
+    <title>Sunrise English Boarding School</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+          <a href="#hero"><img src="pics/logo.jpg" alt="logo"></a>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#student-life">About Us</a></li>
+            <li><a href="#teachers">Academics</a></li>
+            <li><a href="#activities">Extracurricular Activities</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-buttons">
+          
+          <button class="btn explore-btn">Explore Now</button>
+        </div>
+      </header>
+      
+      
+
+      <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Welcome to <br>Sunrise English Boarding School</h1>
+            <p>Join us in our mission to empower students with the knowledge and skills they need to succeed.</p>
+            <div class="hero-buttons">
+                <button class="btn"><a href="form.html"> Admission Form</a></button>
+                <button class="btn" id="notice-btn">Notice</button>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Notice Modal -->
+<div id="notice-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>School Notices</h2>
+        <div id="notices-container"></div>
+        <div id="notice-image-container"></div> <!-- Container for displaying images -->
+    </div>
+</div>
+
+    
+
+    <section id="mission" class="mission">
+        <div class="mission-container">
+            <div class="mission-content">
+                <div class="mission-content-inner">
+                    <h2>Our Mission and Values</h2>
+                    <p>
+                        At Sunrise English Boarding School, we are dedicated to empowering students with the knowledge and skills they need to succeed in the future.
+                        Our mission is to provide a comprehensive educational experience that fosters academic excellence and personal growth.
+                        We believe in a supportive learning environment that encourages creativity and innovation.
+                        Our core values include a commitment to holistic development, ensuring that every student is nurtured not just academically,
+                        but also socially and emotionally. Join us in our journey to inspire young minds and prepare them for a bright future.
+                    </p>
+                </div>
+                <img src="pics/ok (1).jpg" alt="Students working together in a classroom">
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="activities" class="activities">
+        <div class="activities-container">
+            <div class="activities-header">
+                <h2>Explore Our Exciting Extracurricular Activities</h2>
+                <p>
+                    At Sunrise English Boarding School, we offer a diverse range of extracurricular activities 
+                    that complement our academic programs. From sports and arts to various clubs, our activities 
+                    are designed to foster personal growth, teamwork, and creativity. Join us to discover new 
+                    passions and develop essential life skills.
+                </p>
+            </div>
+            <div class="activities-cards">
+                <div class="card">
+                    <img src="pics/spo.jpg" alt="Sports Activity">
+                    <div class="card-content">
+                        <h3>Engage in Team Sports</h3>
+                        <p>
+                            Our sports programs encourage students to develop physical fitness, teamwork, and 
+                            leadership skills. Join our soccer or volleyball teams and experience 
+                            the thrill of competition.
+                        </p>
+                        <button class="btn">Learn More</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pics/top.jpg" alt="Art Activity">
+                    <div class="card-content">
+                        <h3>Unleash Your Creativity</h3>
+                        <p>
+                            Our art programs provide students with the opportunity to express themselves through 
+                            various mediums. Explore painting, drawing, and sculpture in a supportive environment.
+                        </p>
+                        <button class="btn">Learn More</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pics/scou.jpg" alt="Club Activity">
+                    <div class="card-content">
+                        <h3>Join Our Clubs</h3>
+                        <p>
+                            Our clubs offer a platform for students to explore interests in science, technology, 
+                            and more. Participate in hands-on activities and expand your knowledge beyond the classroom.
+                        </p>
+                        <button class="btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="facilities">
+        <div class="facilities-container">
+            <div class="facilities-image">
+                <img src="pics/school.jpg" alt="Campus Facilities">
+            </div>
+            <div class="facilities-content">
+                <h2>Explore Our State-of-the-Art Campus Facilities</h2>
+                <p>
+                    Our campus is equipped with cutting-edge facilities designed to foster an engaging and 
+                    innovative learning environment. From modern classrooms to well-stocked libraries and 
+                    advanced science labs, we provide the resources necessary for students to excel.
+                </p>
+                <ul>
+                    <li>📘 Modern classrooms with interactive technology</li>
+                    <li>📚 Extensive library with diverse resources</li>
+                    <li>🔬 Advanced science and computer laboratories</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="teachers" class="teachers">
+        <div class="teachers-header">
+            <h2>Meet Our Teachers</h2>
+            <p>Our teachers are passionate educators dedicated to student success.</p>
+        </div>
+        <div class="teachers-grid">
+            <div class="teacher-card">
+                <img src="pics/pp.jpg" alt="Alice Johnson">
+                <h3>Alice Johnson</h3>
+                <p>Head of English Department</p>
+                <p>
+                    Alice has over 10 years of experience in teaching English and is committed to enhancing students' language skills.
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/upendra.bhattarai.522"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="teacher-card">
+                <img src="pics/t4.jpg" alt="Michael Smith">
+                <h3>Michael Smith</h3>
+                <p>Mathematics Teacher</p>
+                <p>
+                    Michael specializes in making complex mathematical concepts accessible and engaging for all students.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="teacher-card">
+                <img src="pics/t3.jpg" alt="Sarah Lee">
+                <h3>Sarah Lee</h3>
+                <p>Science Teacher</p>
+                <p>
+                    Sarah is passionate about inspiring curiosity in science and encourages hands-on learning experiences.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="teacher-card">
+                <img src="pics/t2.jpg" alt="David Brown">
+                <h3>David Brown</h3>
+                <p>History Teacher</p>
+                <p>
+                    David brings history to life through engaging storytelling and interactive lessons.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="student-life" class="student-life">
+        <div class="student-life-header">
+            <h2>Discover Student Life at Sunrise</h2>
+            <p>
+                At Sunrise English Boarding School, student life is vibrant and full of opportunities. Our students engage in a variety of activities that foster personal growth, creativity, and a sense of community. From participating in clubs and sports to enjoying social events, every day is an adventure.
+            </p>
+        </div>
+        <div class="student-life-grid">
+            <img src="pics/ok 3.jpg" alt="Students collaborating">
+            <img src="pics/ok 7.jpg" alt="Students playing soccer">
+            <img src="pics/ok 8.jpg" alt="Students in science lab">
+            <img src="pics/ok 10.jpg" alt="Student reading in sunlight">
+            <img src="pics/ok 4.jpg" alt="Students in library">
+            <img src="pics/ok 9.jpg" alt="Students performing on stage">
+            <img src="pics/fir.jpg" alt="Students performing on stage">
+        </div>
+    </section>
+
+    <footer class="custom-footer" id="contact">
+        <div class="footer-top">
+          <!-- Explore Section -->
+          <div class="footer-section explore">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#academics">Academics</a></li>
+              <li><a href="#activities">Extracurricular Activities</a></li>
+            </ul>
+          </div>
+      
+          <!-- Campus Section -->
+          <div class="footer-section campus">
+            <h3>Campus</h3>
+            <ul>
+              <li><a href="#facilities">Facilities</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Community Section -->
+          <div class="footer-section community">
+            <h3>Community</h3>
+            <p>Join us for various events and programs to stay connected!</p>
+            <ul class="social-icons">
+              <li><a href="https://www.facebook.com/profile.php?id=100057438009532" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </div>
+      
+          <!-- Newsletter Section -->
+          <div class="footer-section newsletter">
+            <h3>Stay Updated</h3>
+            <form>
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2025 Sunrise English Boarding School. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#terms">Terms & Conditions</a> | 
+            <a href="#privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+      
+
+    <script src="script.js"></script>
+</body>
+</html>

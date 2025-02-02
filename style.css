@@ -59,13 +59,15 @@ body {
     display: flex;
     gap: 40px;
     padding: 0;
+    
 }
 
 .nav-links li a {
     text-decoration: none;
     color: inherit; /* Inherit color from the parent */
-    font-size: 16px;
+    font-size: 1.2rem;
     transition: color 0.4s ease, padding 0.4s ease;
+    
 }
 
 .nav-links li a:hover {
@@ -147,7 +149,7 @@ body {
 
 .hero {
     height: 100vh;
-    background: url('pics/ram.jpg') no-repeat center center/cover;
+    background: url('pics/rm1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -169,9 +171,9 @@ body {
 }
 
 .hero-content {
-    padding-left: 250px ;
+    padding-left: 200px ;
     z-index: 2;
-    max-width: 600px;
+    max-width: 650px;
 }
 
 .hero-content h1 {
@@ -384,12 +386,9 @@ body {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Center the image below heading and paragraph */
-.mission-content img {
     margin-top: 30px;
 }
+
 
 
 /* Activities Section */
@@ -787,5 +786,17 @@ body {
   color: #ffffff;
 }
 
-
+.map-container {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-container iframe {
+    border: none;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+  }
+  
 
